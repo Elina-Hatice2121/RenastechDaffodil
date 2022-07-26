@@ -1,6 +1,6 @@
 package code.day18_ForEachLoop;
 
-public class c5_nestedForEachLoop {
+public class   c5_nestedForEachLoop {
 
     public static void main(String[] args) {
         int [] arr={10,5,10};

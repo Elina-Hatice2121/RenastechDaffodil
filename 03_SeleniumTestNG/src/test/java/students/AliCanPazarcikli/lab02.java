@@ -3,7 +3,8 @@ package students.AliCanPazarcikli;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class lab02 {
+public class
+lab02 {
     public static void main(String[] args) throws InterruptedException {
         /*
         TC #1: Facebook title verification/Task - 1
