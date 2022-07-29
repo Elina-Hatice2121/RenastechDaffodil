@@ -1,5 +1,7 @@
 package code.day08_Alert_Webtable_Iframe;
 
+
+
 import code.utilities.WebDriverUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -7,10 +9,11 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+
 import java.util.concurrent.TimeUnit;
 
 public class c3_iFrame {
-    //1- Open a chrome browser
+    //1- Open a Chrome browser
     //2- Go to:http://the-internet.herokuapp.com/iframe
     //3- Switching by id or name attribute value.
 

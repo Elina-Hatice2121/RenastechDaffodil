@@ -55,6 +55,6 @@ public class lab3 {
         }else {
             System.out.println("verify title contains cherry failed");
         }
-
+        driver.quit();
     }
 }

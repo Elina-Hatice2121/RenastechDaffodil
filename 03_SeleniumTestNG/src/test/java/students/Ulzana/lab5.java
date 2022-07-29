@@ -29,7 +29,7 @@ public class lab5 {
 
     @Test
     public void TestCase1(){
-        System.out.println("****  TestCase  ****");
+         System.out.println("****  TestCase  ****");
         driver.get("https://www.amazon.ca/");
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         WebElement searchBox=driver.findElement(By.id("twotabsearchtextbox"));
