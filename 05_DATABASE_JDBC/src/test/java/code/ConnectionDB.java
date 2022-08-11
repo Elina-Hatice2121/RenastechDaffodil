@@ -23,6 +23,7 @@ public class ConnectionDB {
 //            System.out.println("Connection Failed! .....");
 //        }
 
+
         // 1.step create connection
         connection = DriverManager.getConnection(dbUrl,username,password);
 
