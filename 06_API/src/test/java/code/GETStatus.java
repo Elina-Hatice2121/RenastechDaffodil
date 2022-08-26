@@ -3,16 +3,21 @@ package code;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class GETStatus {
 
-    String url = "https://simple-books-api.glitch.me";
+    @BeforeClass
+    public void setup(){
+        //Setting BaseURI once
+        RestAssured.baseURI = "https://simple-books-api.glitch.me";
+    }
 
     @Test
     void happyPathTest() {
 
-        Response response = RestAssured.get("https://simple-books-api.glitch.me/status");
+        Response response = RestAssured.get("/status");
 
         System.out.println("Response: " + response.asString());
 
@@ -36,10 +41,9 @@ public class GETStatus {
     void ValidateStatusCode(){
 
         // Given
-        String url = "https://simple-books-api.glitch.me";
 
         //When
-        Response response = RestAssured.get(url+ "/status");
+        Response response = RestAssured.get( "/status");
         int actualStatusCode= response.getStatusCode();
         int expectedStatusCode = 200;
 
@@ -52,10 +56,10 @@ public class GETStatus {
     void ValidateTimeTaken(){
 
         // Given
-        String url = "https://simple-books-api.glitch.me";
+
 
         //When
-        Response response = RestAssured.get(url+ "/status");
+        Response response = RestAssured.get( "/status");
         long actualTimeTaken= response.getTime();
         int expectedStatusCode = 2000;
 

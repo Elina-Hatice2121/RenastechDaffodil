@@ -5,13 +5,18 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.json.JSONObject;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
 public class POSTOrderBook {
 
-    String baseUrl = RestAssured.baseURI = "https://simple-books-api.glitch.me";
+    @BeforeClass
+    public void setup(){
+        //Setting BaseURI once
+        RestAssured.baseURI = "https://simple-books-api.glitch.me";
+    }
 
     @Test
     (description = "Given baseUrl and token When user order book Then Verify status code is 201")

@@ -4,23 +4,27 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
 public class GETbooks {
 
-    String baseUrl = RestAssured.baseURI = "https://simple-books-api.glitch.me";
+    @BeforeClass
+    public void setup(){
+        //Setting BaseURI once
+        RestAssured.baseURI = "https://simple-books-api.glitch.me";
+    }
 
     @Test
     (description = "Given a baseUrl When make GET call w /book Then Verify status Code is 200")
     void userRetrieveListOfTheBooks(){
 
         // Given
-        String url = "https://simple-books-api.glitch.me";
 
         //When
-        Response response = RestAssured.get(url+"/books");
+        Response response = RestAssured.get("/books");
         int actualStatusCode= response.getStatusCode();
         int expectedStatusCode = 200;
 

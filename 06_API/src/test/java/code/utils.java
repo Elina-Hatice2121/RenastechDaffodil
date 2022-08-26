@@ -8,6 +8,10 @@ import static io.restassured.RestAssured.given;
 import io.restassured.specification.RequestSpecification;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 public class utils {
 
     public static String bookId(){
@@ -43,4 +47,10 @@ public class utils {
 
         return "Bearer " + generateTokenResponse.jsonPath().getString("accessToken");
     }
+
+    public static String readFile(String path) throws IOException { // src/test/java/code/orderBook.json
+        return new String(Files.readAllBytes(Paths.get(path)));
+    }
+
+
 }

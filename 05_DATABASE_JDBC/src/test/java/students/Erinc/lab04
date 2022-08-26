@@ -1,0 +1,29 @@
+1. find the 3rd maximum salary from the employees table (do
+not include duplicates)
+select * from(select distinct salary,dense_rank() over (order by salary desc) ranking from employees) where ranking = 3;
+
+2. find the 5th maximum salary from the employees table (do
+not include duplicates)
+
+select * from(select distinct salary,dense_rank() over (order by salary desc) ranking from employees) where ranking = 5;
+
+3. find the 7th maximum salary from the employees table (do
+not include duplicates)
+
+select * from(select distinct salary,dense_rank() over (order by salary desc) ranking from employees) where ranking = 7;
+4. find the 10th maximum salary from the employees table (do
+not include duplicates)
+select * from(select distinct salary,dense_rank() over (order by salary desc) ranking from employees) where ranking = 10;
+5. find the 3rd minimum salary from the employees table (do not
+include duplicates)
+
+select * from(select distinct salary,dense_rank() over (order by salary asc) ranking from employees) where ranking = 3;
+6. find the 5th minimum salary from the employees table (do not
+include duplicates)
+select * from(select distinct salary,dense_rank() over (order by salary asc) ranking from employees) where ranking = 5;
+7. find the 7th maximum salary from the employees table (do
+not include duplicates)
+select * from(select distinct salary,dense_rank() over (order by salary desc) ranking from employees) where ranking = 7;
+8. find the 10th maximum salary from the employees table (do
+not include duplicates)
+select * from(select distinct salary,dense_rank() over (order by salary desc) ranking from employees) where ranking = 10;
